@@ -1,0 +1,17 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "unhappy"
+  },
+  "name": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading2",
+        "content": {
+          "text": "Combine"
+        }
+      }
+    ]
+  }
+}

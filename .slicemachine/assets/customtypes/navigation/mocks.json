@@ -1,0 +1,45 @@
+{
+  "menu": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          ],
+          [
+            "label",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "sometime",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "subtitle": {
+    "__TYPE__": "FieldContent",
+    "value": "personal",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "FieldContent",
+    "value": "needed",
+    "type": "Text"
+  },
+  "date": {
+    "__TYPE__": "FieldContent",
+    "value": "stone",
+    "type": "Text"
+  }
+}

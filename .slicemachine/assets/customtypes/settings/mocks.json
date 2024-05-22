@@ -1,0 +1,39 @@
+{
+  "siteTitle": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Discover"
+        }
+      }
+    ]
+  },
+  "description": {
+    "__TYPE__": "FieldContent",
+    "value": "difficult",
+    "type": "Text"
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+      "width": 5616,
+      "height": 3744
+    },
+    "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?rect=0%2C0%2C5616%2C3744&w=1200&h=800",
+    "width": 1200,
+    "height": 800,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  }
+}
