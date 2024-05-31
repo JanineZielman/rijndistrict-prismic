@@ -26,9 +26,35 @@
         "config": {
           "label": "Image",
           "constraint": {
-            "width": 1080
+            "width": 1080,
+            "height": 1080
           },
           "thumbnails": []
+        }
+      },
+      "image2": {
+        "type": "Image",
+        "config": {
+          "label": "Image2",
+          "constraint": {
+            "width": 1080,
+            "height": 1080
+          },
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "text": {
+              "type": "SharedSlice"
+            },
+            "image": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

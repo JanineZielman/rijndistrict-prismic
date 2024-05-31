@@ -8,7 +8,29 @@ import { PrismicRichText } from "@prismicio/react";
 import { useEffect } from "react";
 
 const Studios = ({ settings, navigation, studios }) => {
-  console.log(studios)
+
+  useEffect(()=>{
+    for (let i = 0; i < document.getElementsByClassName("square-studio").length; i++) {
+      let random = Math.floor(Math.random() * 2);
+      if(random == 1){
+        document.getElementsByClassName("square-studio")[i].classList.add('studio1');
+      } else {
+        document.getElementsByClassName("square-studio")[i].classList.remove('studio1');
+      }
+    }
+    const interval = setInterval(() => {
+      for (let i = 0; i < document.getElementsByClassName("square-studio").length; i++) {
+        let random = Math.floor(Math.random() * 2);
+        if(random == 1){
+          document.getElementsByClassName("square-studio")[i].classList.add('studio1');
+        } else {
+          document.getElementsByClassName("square-studio")[i].classList.remove('studio1');
+        }
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [])
   return (
     <Layout
       alternateLanguages={settings.alternate_languages}
@@ -28,7 +50,18 @@ const Studios = ({ settings, navigation, studios }) => {
         {studios.map((item, i) => {
           return(
             <div className="studio" key={`studio${i}`}>
-              <img src={item.data.image.url}/>
+              <div className="img-wrapper">
+                <img src={item.data.image.url}/>
+                <div id="wrapper2">
+                  <div className='square-container-studio'>
+                    {[...Array(25)].map((squareStudio, j) => {
+                      return(
+                        <button id={`square-studio${j}`} class={`square-studio`} style={{backgroundImage: `url(${item.data.image2.url})`}}></button>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
               <h2>{prismicH.asText(item.data.name)}</h2>
             </div>
           )

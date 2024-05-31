@@ -1,13 +1,13 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "fact"
+    "value": "pattern"
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "text$ab8d36b1-5ac3-48e3-82ce-2922f77d65cb",
+        "key": "text$ee4bda68-895b-459c-8ee6-a97962cc14bf",
         "name": "text",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -19,7 +19,7 @@
                 {
                   "type": "heading2",
                   "content": {
-                    "text": "Paint"
+                    "text": "Weigh"
                   }
                 }
               ]
@@ -30,7 +30,55 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Voluptate deserunt sunt eu incididunt Lorem sit deserunt fugiat aliqua cupidatat nostrud cillum anim laboris esse. Deserunt pariatur aliquip ipsum consequat eu id anim eiusmod elit. Fugiat mollit tempor ullamco ut id et non ad duis occaecat in officia ipsum."
+                    "text": "Cillum do tempor quis exercitation cupidatat nostrud non irure id in id est officia sit occaecat. Deserunt elit elit exercitation commodo."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "image$625f561e-cc5a-4ad0-9d29-6fd704e9b020",
+        "name": "image",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "image": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+                "width": 3212,
+                "height": 3880
+              },
+              "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?rect=0%2C0%2C3212%2C3879&w=1920&h=2319",
+              "width": 1920,
+              "height": 2319,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            },
+            "caption": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Et est laborum sint ex amet eiusmod Lorem labore ut incididunt ipsum tempor ex aliquip. Adipisicing adipisicing elit cillum sit id ad duis ex amet esse nisi ad tempor ullamco in. Laboris sint dolore veniam occaecat."
                   }
                 }
               ]
