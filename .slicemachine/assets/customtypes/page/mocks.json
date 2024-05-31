@@ -1,6 +1,49 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "supply"
+    "value": "fact"
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "text$ab8d36b1-5ac3-48e3-82ce-2922f77d65cb",
+        "name": "text",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading2",
+                  "content": {
+                    "text": "Paint"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Voluptate deserunt sunt eu incididunt Lorem sit deserunt fugiat aliqua cupidatat nostrud cillum anim laboris esse. Deserunt pariatur aliquip ipsum consequat eu id anim eiusmod elit. Fugiat mollit tempor ullamco ut id et non ad duis occaecat in officia ipsum."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      }
+    ]
   }
 }

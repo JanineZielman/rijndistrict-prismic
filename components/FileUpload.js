@@ -1,11 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export const FileUpload = () => {
+export const FileUpload = ({idName, addGrid}) => {
   const [file, setFile] = useState();
   const [fileEnter, setFileEnter] = useState(false);
+
+  function resetFile(){
+    let ele = document.getElementsByClassName('square');
+    for(let i = 0; i < ele.length; i++) {
+      ele[i].style.backgroundImage = ""; 
+    }
+    setFile("")
+  }
+  
+
   return (
-    <div className="drag-file">
+    <div className="drag-file" id={idName}>
       {!file ? (
         <div
           onDragOver={(e) => {
@@ -53,6 +63,7 @@ export const FileUpload = () => {
               if (files && files[0]) {
                 let blobUrl = URL.createObjectURL(files[0]);
                 setFile(blobUrl);
+                if (addGrid) {addGrid()};
               }
             }}
           />
@@ -65,7 +76,7 @@ export const FileUpload = () => {
             type="image/png" //need to be updated based on type of file
           />
           <button
-            onClick={() => setFile("")}
+            onClick={() => resetFile()}
             className="reset-button"
           >
             Reset

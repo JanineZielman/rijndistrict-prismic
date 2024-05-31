@@ -5,5 +5,12 @@
     "studio": {},
     "navigation": {},
     "settings": {}
+  },
+  "slices": {
+    "Text": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

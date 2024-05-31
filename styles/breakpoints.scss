@@ -7,6 +7,9 @@
 
 
 @media only screen and (max-width: 600px) {
+  h2{
+    font-size: 30px;
+  }
   .images-bg{
     flex-direction: column;
     img{
@@ -17,5 +20,37 @@
   .square{
     width: 50vw;
     height: 50vw;
+  }
+  .topbar{
+    h1, a{
+      font-size: 24px;
+    }
+    a{
+      margin: 0 5px;
+    }
+  }
+  .bottombar{
+    h1{
+      font-size: 18px;
+    }
+  }
+  .studio-grid{
+    margin-top: 34px;
+    flex-direction: column;
+    .studio{
+      width: 100%;
+    }
+  }
+  .page{
+    margin-top: 50px;
+  }
+  .text-section{
+    padding-bottom: 24px;
+    p{
+      font-size: 18px;
+    }
+    h2{
+      font-size: 30px;
+    }
   }
 }

@@ -11,6 +11,7 @@ export default function Document() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fff"/>
         <meta name="msapplication-TileColor" content="#fff"/>
         <meta name="theme-color" content="#ffffff"></meta> */}
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" async></script>
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />

@@ -1,0 +1,156 @@
+.poster{
+  width: calc(95vh / 1.41);
+  height: 95vh;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 2.5vh;
+  -webkit-box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
+  .triangle{
+    mask-size: 101%;
+  }
+  .drag-file{
+    width: 100%;
+    height: calc(85vh / 2);
+    input{
+      position: absolute;
+      z-index: 999;
+      // border: 1px solid black;
+      height: calc(85vh /2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 5.2vh;
+    }
+  }
+  .topbar{
+    position: absolute;
+    h1{
+      font-size: 5vh;
+      padding: 8px;
+      white-space: nowrap;
+    }
+  }
+  .bottombar{
+    position: absolute;
+    h1{
+      font-size: 3vh;
+      padding: 8px;
+      font-weight: 400;
+      width: 50%;
+      &:last-child{
+        text-align: right;
+        white-space: nowrap;
+        p{
+          margin: 0;
+          margin-top: 3px;
+          font-size: 2.3vh;
+        }
+      }  
+    }
+  }
+
+  .reset-button{
+    position: fixed;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    margin-left: -100px;
+  }
+}
+
+@page {
+  margin: 0;
+}
+
+#wrapper{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: 4vh;
+}
+
+.square-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 0;
+  margin-left: 0;
+}
+
+.poster button.square {
+  display: inline-block;
+  width: calc(95vh / 1.41 / 8);
+  height: calc(95vh / 1.41 / 8);
+  border: none;
+  outline: 0px;
+  background-color: transparent;
+  position: relative;
+  padding: 0;
+  transform-origin: center center;
+  background-size: calc(100% * 9);
+  background-repeat: no-repeat;
+}
+
+@for $i from 0 through 9 {
+  @for $j from ($i *8) through ($i * 8 + 7) {
+    .poster button.square#square#{calc($j)}{
+      background-position-y: ($i * calc(-95vh / 1.41 / 8));
+    }
+  }
+  .poster button.square:nth-child(8n+#{$i}){
+    background-position-x: ($i * calc(-95vh / 1.41 / 8));
+  }
+  .poster button.square:nth-child(8n+ 1){
+    background-color: white;
+    background-image: none;
+  }
+}
+
+#file1 object, #file2 object{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+#file1 object{
+  z-index: -1;
+}
+
+
+@media print{
+  .poster{
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  } 
+  .poster .container{
+    transform: scale(1.1);
+    margin-top: 2vh;
+  }
+}
+
+.print{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}

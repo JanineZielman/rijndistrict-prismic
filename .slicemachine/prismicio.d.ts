@@ -114,7 +114,24 @@ export interface NavigationDocumentDataMenuItem {
  */
 export type NavigationDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
 /** Content for Page documents */
-type PageDocumentData = Record<string, never>;
+interface PageDocumentData {
+    /**
+     * Slice Zone field in *Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Page → Slice Zone*
+ *
+ */
+type PageDocumentDataSlicesSlice = TextSlice;
 /**
  * Page document from Prismic
  *
@@ -184,6 +201,17 @@ interface StudioDocumentData {
      *
      */
     name: prismicT.RichTextField;
+    /**
+     * Image field in *Studio*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: studio.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
 }
 /**
  * Studio document from Prismic
@@ -196,11 +224,60 @@ interface StudioDocumentData {
  */
 export type StudioDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<StudioDocumentData>, "studio", Lang>;
 export type AllDocumentTypes = HomeDocument | NavigationDocument | PageDocument | SettingsDocument | StudioDocument;
+/**
+ * Primary content in Text → Primary
+ *
+ */
+interface TextSliceDefaultPrimary {
+    /**
+     * Title field in *Text → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: text.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Text → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: text.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Text*
+ *
+ */
+type TextSliceVariation = TextSliceDefault;
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, PageDocumentData, PageDocument, SettingsDocumentData, SettingsDocument, StudioDocumentData, StudioDocument, AllDocumentTypes };
+        export type { HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, StudioDocumentData, StudioDocument, AllDocumentTypes, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

@@ -20,6 +20,16 @@
           "allowTargetBlank": true,
           "multi": "heading2"
         }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {
+            "width": 1080
+          },
+          "thumbnails": []
+        }
       }
     }
   }

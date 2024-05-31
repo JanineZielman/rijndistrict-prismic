@@ -8,14 +8,14 @@
 }
 
 @font-face {
-  font-family: "robo-flex";
-  src: url("./RobotoFlex-VariableFont.ttf") format("truetype");
+  font-family: "archivo";
+  src: url("./Archivo-VariableFont.ttf") format("truetype");
 }
 
 body{
   margin: 0;
   padding: 0;
-  font-family: "calibre";
+  font-family: "archivo";
 }
 
 a{
@@ -23,25 +23,31 @@ a{
   text-decoration: none;
 }
 
+p{
+  line-height: 1.4;
+}
+
+h2{
+  font-weight: 300;
+}
+
 .navigation{
   display: flex;
   a{
     color: black;
     text-decoration: none;
-    margin: 0 14px;
-    font-size: 3vw;
+    margin: 0 24px;
     line-height: 0.9;
   }
 }
 
 .topbar, .bottombar{
   a{
-    line-height: 0.9;
+    line-height: 1;
   }
   h1{
-    font-size: 3vw;
-    line-height: 0.9;
-    font-weight: 400;
+    line-height: 1;
+    font-weight: 300;
     margin: 0;
     max-width: 500px;
   }  
@@ -53,11 +59,13 @@ a{
   justify-content: space-between;
   align-items: start;
   width: 100%;
-  padding: 1% 0.5% 0.5% 0.5%;
+  padding: 0.5% 0.5% 0.5% 0.5%;
   background-color: white;
   z-index: 999;
   top: 0;
-  
+  h1, a{
+    font-size: 60px;
+  }  
 }
 
 .bottombar{
@@ -65,66 +73,14 @@ a{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 1% 0.5% 0% 0.5%;
+  padding: 0.8% 0.5% 0.8% 0.5%;
   background-color: white;
   z-index: 999;
   bottom: 0;
   align-items: end;
-}
-
-#fontAni{
-  position: fixed;
-  top: calc(50% + 2vh);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 125vh;
-  font-weight: normal;
-  line-height: 1;
-  text-align: center;
-  margin: 0;
-  font-family: "robo-flex";
-  transition: all 1s ease;
-  z-index: 99;
-  mix-blend-mode: difference;
-  color: white;
-  // background-color: black;
-  width: 100vw;
-}
-
-.f100{
-  font-variation-settings: 'wght' 100;
-}
-
-.f200{
-  font-variation-settings: 'wght' 200;
-}
-
-.f300{
-  font-variation-settings: 'wght' 300;
-}
-
-.f400{
-  font-variation-settings: 'wght' 400;
-}
-
-.f500{
-  font-variation-settings: 'wght' 500;
-}
-
-.f600{
-  font-variation-settings: 'wght' 600;
-}
-
-.f700{
-  font-variation-settings: 'wght' 700;
-}
-
-.f800{
-  font-variation-settings: 'wght' 800;
-}
-
-.f900{
-  font-variation-settings: 'wght' 900;
+  h1{
+    font-size: 36px;
+  }
 }
 
 .grid{
@@ -141,9 +97,6 @@ a{
   height: 16.666vw;
   position: relative;
   margin-top: -1px;
-  // margin-left: 1px;
-  // margin-right: -1px;
-  // margin-bottom: -1px;
 }
 
 .triangle{
@@ -187,88 +140,41 @@ a{
 }
 
 
-.poster{
-  width: calc(95vh / 1.41);
-  height: 95vh;
-  position: relative;
-  overflow: hidden;
+
+.page{
+  margin-top: 150px;
+}
+.text-section{
+  max-width: 900px;
   margin: auto;
-  margin-top: 2.5vh;
-  -webkit-box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
-  .triangle{
-    mask-size: 101%;
+  padding: 0 14px;
+  h2{
+    font-size: 36px;
+    margin: 0;
   }
-  .drag-file{
-    // position: absolute;
-    // z-index: 999;
-    // background-color: red;
-    width: 100%;
-    height: calc(85vh /2);
-    input{
-      position: absolute;
-      z-index: 999;
-      border: 1px solid black;
-      height: calc(85vh /2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  p{
+    font-size: 24px;
+  }
+}
+
+.studio-grid{
+  margin-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.5%;
+  padding-bottom: 100px;
+  .studio{
+    width: 24%;
+    margin: 0.5%;
+    img{
       width: 100%;
-      margin-top: 5.2vh;
-    }
-  }
-  .topbar, .bottombar{
-    position: absolute;
-    h1{
-      font-size: 4.5vh;
-      padding: 8px;
-    }
-  }
-  .bottombar h1:last-child{
-    white-space: nowrap;
-  }
-  .square{
-    width: calc(95vh / 1.41 / 4);
-    height: calc(95vh / 1.41 /4);
-  }
-  .images-bg{
-    display: flex;
-    flex-direction: column;
-    object{
-      width: 100%;
-      height: calc(95vh / 2);
+      height: auto;
       object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+    h2{
+      font-size: 36px;
+      margin: 10px 0;
     }
   }
-  .reset-button{
-    position: fixed;
-    margin-left: 24px;
-    background-color: black;
-    color: white;
-    border: none;
-    outline: none;
-    padding: 5px 20px;
-  }
-}
-
-@page {
-  margin: 0;
-}
-
-@media print{
-  .poster{
-    position: absolute;
-    top: 0;
-    margin-top: 0;
-    width: 100vw;
-    height: 100vh;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    .square{
-      width: calc(100vh / 1.41 / 4);
-      height: calc(100vh / 1.41 /4);
-    }
-  } 
 }
