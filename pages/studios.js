@@ -56,7 +56,7 @@ const Studios = ({ settings, navigation, studios }) => {
                   <div className='square-container-studio'>
                     {[...Array(25)].map((squareStudio, j) => {
                       return(
-                        <button id={`square-studio${j}`} class={`square-studio`} style={{backgroundImage: `url(${item.data.image2.url})`}}></button>
+                        <button key={`square-studio${j}`} id={`square-studio${j}`} class={`square-studio`} style={{backgroundImage: `url(${item.data.image2.url})`}}></button>
                       )
                     })}
                   </div>
