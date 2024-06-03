@@ -140,6 +140,30 @@ export interface NavigationDocumentDataMenuItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type NavigationDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
+/** Content for Open Studios documents */
+interface OpenStudiosDocumentData {
+    /**
+     * Intro field in *Open Studios*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: open_studios.intro
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    intro: prismicT.RichTextField;
+}
+/**
+ * Open Studios document from Prismic
+ *
+ * - **API ID**: `open_studios`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OpenStudiosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<OpenStudiosDocumentData>, "open_studios", Lang>;
 /** Content for Page documents */
 interface PageDocumentData {
     /**
@@ -277,7 +301,7 @@ type StudioDocumentDataSlicesSlice = TextSlice | ImageSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type StudioDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<StudioDocumentData>, "studio", Lang>;
-export type AllDocumentTypes = HomeDocument | NavigationDocument | PageDocument | SettingsDocument | StudioDocument;
+export type AllDocumentTypes = HomeDocument | NavigationDocument | OpenStudiosDocument | PageDocument | SettingsDocument | StudioDocument;
 /**
  * Primary content in Image → Primary
  *
@@ -381,6 +405,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataImagesItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { HomeDocumentData, HomeDocumentDataImagesItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, OpenStudiosDocumentData, OpenStudiosDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

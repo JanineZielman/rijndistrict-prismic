@@ -10,6 +10,9 @@
   h2{
     font-size: 30px;
   }
+  p{
+    font-size: 18px;
+  }
   .images-bg{
     flex-direction: column;
     img{
@@ -23,25 +26,39 @@
   }
   .topbar{
     h1, a{
-      font-size: 24px;
+      font-size: 20px;
     }
     a{
       margin: 0 5px;
     }
   }
+  .container{
+    padding: 0 10px;
+  }
+  .page-intro{
+    margin-top: 50px;
+    p{
+      font-size: 18px;
+    }
+  }
   .bottombar{
     h1{
       font-size: 18px;
+      &:first-child{
+        width: 50%;
+      }
     }
   }
   .studio-grid{
     margin-top: 34px;
     flex-direction: column;
-    width: 98%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     .studio{
-      width: 99%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
       margin-bottom: 48px;
     }
   }
@@ -58,9 +75,9 @@
     }
   }
   button.square-studio {
-    width: 19.2vw;
-    height: 19.2vw;
-    background-size: calc(19.2vw*5) calc(19.2vw*5);
+    width: calc((100vw - 24px)/5);
+    height: calc((100vw - 20px)/5);
+    background-size: calc(100vw - 24px) calc(100vw - 24px);
     &.studio1{
       background-image: none!important;
     }
@@ -68,11 +85,11 @@
   @for $i from 0 through 4 {
     @for $j from ($i * 5) through ($i * 5 + 4) {
       button.square-studio#square-studio#{calc($j)}{
-        background-position-y: (-$i * 19.2vw);
+        background-position-y: (-$i * 19vw);
       }
     }
     button.square-studio:nth-child(5n+#{$i+1}){
-      background-position-x: (-$i * 19.2vw);
+      background-position-x: (-$i * 19vw);
     }
     button.square-studio:nth-child(5n+ 1){
       background-color: white;

@@ -1,0 +1,19 @@
+{
+  "id": "open_studios",
+  "label": "Open Studios",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "intro": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Intro",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,list-item,o-list-item,hyperlink"
+        }
+      }
+    }
+  }
+}

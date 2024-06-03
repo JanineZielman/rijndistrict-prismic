@@ -7,7 +7,7 @@ import Link from "next/link";
 import { PrismicRichText } from "@prismicio/react";
 import { useEffect } from "react";
 
-const Studios = ({ settings, navigation, studios }) => {
+const Studios = ({ settings, navigation, studios, openStudios }) => {
 
   useEffect(()=>{
     for (let i = 0; i < document.getElementsByClassName("square-studio").length; i++) {
@@ -46,6 +46,9 @@ const Studios = ({ settings, navigation, studios }) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container">
+      <div className="page-intro">
+        <PrismicRichText field={openStudios.data.intro}/>
+      </div>
       <div className="studio-grid">
         {studios.map((item, i) => {
           return(
@@ -80,13 +83,15 @@ export async function getStaticProps({ locale, previewData }) {
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
   const studios = await client.getAllByType("studio", { lang: locale });
+  const openStudios = await client.getSingle("open_studios", { lang: locale });
 
 
   return {
     props: {
       navigation,
       settings,
-      studios
+      studios,
+      openStudios
     },
   };
 }
