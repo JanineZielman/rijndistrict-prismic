@@ -249,3 +249,54 @@ button.square-studio {
     background-image: none;
   }
 }
+
+.home-grid{
+  display: flex;
+  .img-wrapper{
+    aspect-ratio: inherit;
+  }
+  img{
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  #wrapper2{
+    width: 50vw;
+    height: 100vh;
+  }
+}
+
+.square-container-home {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 0;
+  margin-left: 0;
+}
+
+button.square-home {
+  display: inline-block;
+  width: calc(50vw / 5);
+  height: calc(100vh / 5);
+  border: none;
+  outline: 0px;
+  background-color: transparent;
+  position: relative;
+  padding: 0;
+  transform-origin: center center;
+  background-size: 50vw 100vh;
+  &.studio1{
+    background-image: none!important;
+  }
+}
+
+@for $i from 0 through 4 {
+  @for $j from ($i * 5) through ($i * 5 + 4) {
+    button.square-home#square-home#{calc($j)}{
+      background-position-y: ($i * calc(-100vh / 5));
+    }
+  }
+  button.square-home:nth-child(5n+#{$i+1}){
+    background-position-x: ($i * calc(-50vw / 5));
+  }
+}

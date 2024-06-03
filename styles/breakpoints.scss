@@ -83,4 +83,38 @@
       background-image: none;
     }
   }
+  .home-grid{
+    flex-direction: column;
+    #wrapper2{
+      width: 100vw;
+      height: 50vh;
+    }
+    img{
+      width: 100vw;
+      height: 50vh;
+      margin-bottom: -5px;
+    }
+  }
+  .square-container-home {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 0;
+    margin-left: 0;
+  }
+  button.square-home {
+    width: calc(100vw / 5);
+    height: calc(50vh / 5);
+    background-size: 100vw 50vh;
+  }
+  @for $i from 0 through 4 {
+    @for $j from ($i * 5) through ($i * 5 + 4) {
+      button.square-home#square-home#{calc($j)}{
+        background-position-y: ($i * calc(-50vh / 5));
+      }
+    }
+    button.square-home:nth-child(5n+#{$i+1}){
+      background-position-x: ($i * calc(-100vw / 5));
+    }
+  }
 }
