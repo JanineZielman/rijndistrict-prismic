@@ -19,6 +19,33 @@ interface HomeDocumentData {
      *
      */
     title: prismicT.TitleField;
+    /**
+     * Images field in *Home*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.images[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    images: prismicT.GroupField<Simplify<HomeDocumentDataImagesItem>>;
+}
+/**
+ * Item in Home → Images
+ *
+ */
+export interface HomeDocumentDataImagesItem {
+    /**
+     * Image field in *Home → Images*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.images[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
 }
 /**
  * Home document from Prismic
@@ -354,6 +381,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { HomeDocumentData, HomeDocumentDataImagesItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

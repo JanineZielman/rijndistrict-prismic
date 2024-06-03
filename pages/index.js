@@ -7,9 +7,10 @@ import Link from "next/link";
 import { PrismicRichText } from "@prismicio/react";
 import { useEffect } from "react";
 
-const Index = ({ settings, navigation, page, studios }) => {
-  let randomPic1 = studios[Math.floor(Math.random() * studios.length)].data.image.url
-  let randomPic2 = studios[Math.floor(Math.random() * studios.length)].data.image2.url
+const Index = ({ settings, navigation, page }) => {
+  console.log(page)
+  let randomPic1 = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
+  let randomPic2 = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
   useEffect(()=>{
     for (let i = 0; i < document.getElementsByClassName("square-home").length; i++) {
       let random = Math.floor(Math.random() * 2);
@@ -28,19 +29,17 @@ const Index = ({ settings, navigation, page, studios }) => {
           document.getElementsByClassName("square-home")[i].classList.remove('studio1');
         }
 
-        document.getElementsByClassName("square-home")[i].style.backgroundImage = `url(${studios[Math.floor(Math.random() * studios.length)].data.image2.url})`
+        document.getElementsByClassName("square-home")[i].style.backgroundImage = `url(${page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url})`
       }
         let random2 = Math.floor(Math.random() * 2 + 1);
-        document.getElementById('img1').src = studios[Math.floor(Math.random() * studios.length)].data.image.url
-        document.getElementById('img2').src = studios[Math.floor(Math.random() * studios.length)].data.image.url
+        document.getElementById('img1').src = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
+        document.getElementById('img2').src = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
         document.getElementById('r-logo').style.maskImage = `url(/r${random2}.svg)`
 
     }, 1000);
 
     return () => clearInterval(interval);
   }, [])
-
-  console.log(studios)
 
   return (
     <Layout
@@ -57,7 +56,7 @@ const Index = ({ settings, navigation, page, studios }) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container">
-        <div class="home-grid">
+        <div className="home-grid">
           <div id="r-logo" className="r-logo"></div>
           <div className="img-wrapper">
             <img id="img1" src={randomPic1}/>
@@ -77,7 +76,7 @@ const Index = ({ settings, navigation, page, studios }) => {
               <div className='square-container-home'>
                 {[...Array(25)].map((squareStudio, j) => {
                   return(
-                    <button key={`square-home${j}`} id={`square-home${j}`} class={`square-home`} style={{backgroundImage: `url(${randomPic2})`}}></button>
+                    <button key={`square-home${j}`} id={`square-home${j}`} className={`square-home`} style={{backgroundImage: `url(${randomPic2})`}}></button>
                   )
                 })}
               </div>
@@ -97,15 +96,12 @@ export async function getStaticProps({ locale, previewData }) {
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
   const page = await client.getSingle("home", { lang: locale });
-  const studios = await client.getAllByType("studio", { lang: locale });
-
 
   return {
     props: {
       navigation,
       settings,
-      page,
-      studios
+      page
     },
   };
 }

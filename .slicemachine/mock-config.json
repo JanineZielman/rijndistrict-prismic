@@ -1,7 +1,9 @@
 {
   "_cts": {
     "page": {},
-    "home": {},
+    "home": {
+      "images": {}
+    },
     "studio": {},
     "navigation": {},
     "settings": {}

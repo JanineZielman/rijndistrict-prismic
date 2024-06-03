@@ -10,7 +10,7 @@ export const Layout = ({
 }) => {
   return (
     <>
-      <div class="topbar">
+      <div className="topbar">
         <h1><Link href="/">{prismicH.asText(settings.data.siteTitle)}</Link></h1>
         <div className="navigation">
           {navigation.data?.menu.map((item) => (
@@ -29,7 +29,7 @@ export const Layout = ({
       <main>
         {children}
       </main>
-      <div class="bottombar">
+      <div className="bottombar">
         <h1>{navigation.data.subtitle}</h1>
         {/* <h1>{navigation.data.description}</h1> */}
         <h1>{navigation.data.date}</h1>
