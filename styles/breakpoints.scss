@@ -138,6 +138,11 @@
       background-position-x: ($i * calc(-100vw / 5));
     }
   }
+  .content{
+    .info{
+      flex-direction: column;
+    }
+  }
   .content .flex img:nth-child(1){
     margin-left: 0;
     width: 49%;
