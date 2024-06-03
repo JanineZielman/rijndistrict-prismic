@@ -43,6 +43,27 @@
           "thumbnails": []
         }
       },
+      "dicipline": {
+        "type": "Text",
+        "config": {
+          "label": "Dicipline",
+          "placeholder": ""
+        }
+      },
+      "adres": {
+        "type": "Text",
+        "config": {
+          "label": "Adres",
+          "placeholder": ""
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

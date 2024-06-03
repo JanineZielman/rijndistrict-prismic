@@ -275,6 +275,39 @@ interface StudioDocumentData {
      */
     image2: prismicT.ImageField<never>;
     /**
+     * Dicipline field in *Studio*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: studio.dicipline
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    dicipline: prismicT.KeyTextField;
+    /**
+     * Adres field in *Studio*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: studio.adres
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    adres: prismicT.KeyTextField;
+    /**
+     * Email field in *Studio*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: studio.email
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    email: prismicT.KeyTextField;
+    /**
      * Slice Zone field in *Studio*
      *
      * - **Field Type**: Slice Zone
