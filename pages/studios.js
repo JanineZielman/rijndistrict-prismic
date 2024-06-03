@@ -52,21 +52,21 @@ const Studios = ({ settings, navigation, studios, openStudios }) => {
       <div className="studio-grid">
         {studios.map((item, i) => {
           return(
-            <div className="studio" key={`studio${i}`}>
-              <div className="img-wrapper">
-                <img src={item.data.image.url}/>
-                <div id="wrapper2">
-                  <div className='square-container-studio'>
-                    {[...Array(25)].map((squareStudio, j) => {
-                      return(
-                        <button key={`square-studio${j}`} id={`square-studio${j}`} className={`square-studio`} style={{backgroundImage: `url(${item.data.image2.url})`}}></button>
-                      )
-                    })}
+            <Link href={`/studios/${item.uid}`} className="studio" key={`studio${i}`}>
+                <div className="img-wrapper">
+                  <img src={item.data.image.url}/>
+                  <div id="wrapper2">
+                    <div className='square-container-studio'>
+                      {[...Array(25)].map((squareStudio, j) => {
+                        return(
+                          <button key={`square-studio${j}`} id={`square-studio${j}`} className={`square-studio`} style={{backgroundImage: `url(${item.data.image2.url})`}}></button>
+                        )
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <h2>{prismicH.asText(item.data.name)}</h2>
-            </div>
+                <h2>{prismicH.asText(item.data.name)}</h2>
+            </Link>
           )
         })}
        </div>
