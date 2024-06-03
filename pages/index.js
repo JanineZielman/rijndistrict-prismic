@@ -3,8 +3,6 @@ import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
-import Link from "next/link";
-import { PrismicRichText } from "@prismicio/react";
 import { useEffect } from "react";
 
 const Index = ({ settings, navigation, page }) => {
@@ -13,28 +11,20 @@ const Index = ({ settings, navigation, page }) => {
   let randomPic2 = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
   useEffect(()=>{
     for (let i = 0; i < document.getElementsByClassName("square-home").length; i++) {
-      let random = Math.floor(Math.random() * 2);
-      if(random == 1){
-        document.getElementsByClassName("square-home")[i].classList.add('studio1');
-      } else {
-        document.getElementsByClassName("square-home")[i].classList.remove('studio1');
-      }
+      document.getElementsByClassName("square-home")[i].style.backgroundImage = `url(${page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url})`
     }
+    let random2 = Math.floor(Math.random() * 11);
+    document.getElementById('img1').src = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
+    document.getElementById('img2').src = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
+    document.getElementById('r-logo').src = `/r${random2}.svg`
     const interval = setInterval(() => {
       for (let i = 0; i < document.getElementsByClassName("square-home").length; i++) {
-        let random = Math.floor(Math.random() * 2);
-        if(random == 1){
-          document.getElementsByClassName("square-home")[i].classList.add('studio1');
-        } else {
-          document.getElementsByClassName("square-home")[i].classList.remove('studio1');
-        }
-
         document.getElementsByClassName("square-home")[i].style.backgroundImage = `url(${page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url})`
       }
-        let random2 = Math.floor(Math.random() * 2 + 1);
+        let random2 = Math.floor(Math.random() * 11);
         document.getElementById('img1').src = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
         document.getElementById('img2').src = page.data.images[Math.floor(Math.random() * page.data.images.length)].image.url
-        document.getElementById('r-logo').style.maskImage = `url(/r${random2}.svg)`
+        document.getElementById('r-logo').src = `/r${random2}.svg`
 
     }, 1000);
 
@@ -57,7 +47,9 @@ const Index = ({ settings, navigation, page }) => {
       </Head>
       <div className="container">
         <div className="home-grid">
-          <div id="r-logo" className="r-logo"></div>
+          <div className="r-logo">
+          <img id="r-logo" src="/r1.svg"></img>
+          </div>
           <div className="img-wrapper">
             <img id="img1" src={randomPic1}/>
             <div id="wrapper2">

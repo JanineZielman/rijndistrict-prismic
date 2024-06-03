@@ -65,7 +65,7 @@ h2{
   z-index: 999;
   top: 0;
   h1, a{
-    font-size: 60px;
+    font-size: 48px;
   }  
 }
 
@@ -74,13 +74,13 @@ h2{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0.8% 1% 0.8% 1%;
+  padding: 0.5% 1% 0.5% 1%;
   background-color: white;
   z-index: 999;
   bottom: 0;
   align-items: end;
   h1{
-    font-size: 36px;
+    font-size: 28px;
   }
 }
 
@@ -302,15 +302,20 @@ button.square-home {
 }
 
 .r-logo{
-  mask-image: url(./SVG/r1.svg);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: 70% 70%;
-  background-color: white;
   position: absolute;
   width: 100vw;
   height: 100vh;
   z-index: 9;
   left: 0;
   top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    height: 60vh;
+    width: auto;
+    max-width: 60%;
+    object-fit: contain;
+    filter: invert(1);
+  }
 }
