@@ -13,36 +13,27 @@ const Index = ({ settings, navigation, page, studios }) => {
   useEffect(()=>{
     for (let i = 0; i < document.getElementsByClassName("square-home").length; i++) {
       let random = Math.floor(Math.random() * 2);
-      let random2 = Math.floor(Math.random() * 10);
       if(random == 1){
         document.getElementsByClassName("square-home")[i].classList.add('studio1');
       } else {
         document.getElementsByClassName("square-home")[i].classList.remove('studio1');
       }
-      if(random2 == 1){
-        document.getElementsByClassName("square-home")[i].style.backgroundImage = 'none';
-        document.getElementsByClassName("square-home")[i].style.backgroundColor = 'white';
-      }
     }
     const interval = setInterval(() => {
       for (let i = 0; i < document.getElementsByClassName("square-home").length; i++) {
         let random = Math.floor(Math.random() * 2);
-        let random2 = Math.floor(Math.random() * 10);
         if(random == 1){
           document.getElementsByClassName("square-home")[i].classList.add('studio1');
         } else {
           document.getElementsByClassName("square-home")[i].classList.remove('studio1');
         }
-        if(random2 == 1){
-          document.getElementsByClassName("square-home")[i].style.backgroundImage = 'none';
-          document.getElementsByClassName("square-home")[i].style.backgroundColor = 'white';
-        } else {
-          document.getElementsByClassName("square-home")[i].style.backgroundImage = `url(${studios[Math.floor(Math.random() * studios.length)].data.image2.url})`
-        }
+
+        document.getElementsByClassName("square-home")[i].style.backgroundImage = `url(${studios[Math.floor(Math.random() * studios.length)].data.image2.url})`
       }
-        
+        let random2 = Math.floor(Math.random() * 2 + 1);
         document.getElementById('img1').src = studios[Math.floor(Math.random() * studios.length)].data.image.url
         document.getElementById('img2').src = studios[Math.floor(Math.random() * studios.length)].data.image.url
+        document.getElementById('r-logo').style.maskImage = `url(/r${random2}.svg)`
 
     }, 1000);
 
@@ -67,6 +58,7 @@ const Index = ({ settings, navigation, page, studios }) => {
       </Head>
       <div className="container">
         <div class="home-grid">
+          <div id="r-logo" className="r-logo"></div>
           <div className="img-wrapper">
             <img id="img1" src={randomPic1}/>
             <div id="wrapper2">
