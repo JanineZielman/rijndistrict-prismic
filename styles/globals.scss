@@ -172,7 +172,7 @@ h2{
   padding-bottom: 100px;
   .studio{
     width: 24%;
-    margin: 0.5%;
+    margin: 1% 0.5%;
     img{
       width: 100%;
       height: auto;
@@ -181,7 +181,7 @@ h2{
     }
     h2{
       font-size: 36px;
-      margin: 10px 0;
+      margin: 0px 0;
     }
   }
 }
@@ -310,10 +310,10 @@ button.square-home {
 .r-logo{
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
+  top: 10vh;
   z-index: 9;
   left: 0;
-  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -341,6 +341,14 @@ button.square-home {
   }
 }
 
+.info{
+  display: flex;
+  p{
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+}
+
 .content{
   max-width: 900px;
   margin: auto;
@@ -359,6 +367,7 @@ button.square-home {
     animation: fadein 1.5s linear 0.2s 1 forwards;
     display: flex;
     p{
+      margin-top: 14px;
       margin-bottom: 0;
       border-bottom: 1.5px solid black;
       margin-right: 24px;
@@ -413,5 +422,23 @@ button.square-home {
 
   to {
     transform: translateY(0%);
+  }
+}
+
+.social-grid{
+  .img-wrapper{
+    height: 100vh;
+  }
+  input{
+    position: fixed!important;
+    z-index: 999!important;
+    top: 14px;
+    margin-left: 14px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    -webkit-box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
   }
 }
