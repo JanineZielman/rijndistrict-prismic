@@ -86,7 +86,7 @@ const Poster = ({ settings, navigation, page }) => {
         <h1>{prismicH.asText(settings.data.siteTitle)}</h1>
         <h1 contentEditable>*INSERT NAME*</h1>
       </div>
-      <div className="container">
+      <div className="poster-container">
         <div className="images-bg">
 
           <FileUpload idName={'file2'}/>

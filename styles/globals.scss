@@ -17,6 +17,8 @@ body{
   padding: 0;
   font-family: "archivo";
   font-weight: 300;
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
 }
 
 a{
