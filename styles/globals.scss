@@ -230,6 +230,7 @@ button.square-studio {
   padding: 0;
   transform-origin: center center;
   background-size: 23.52vw 23.52vw;
+  overflow: hidden;
   &.studio1{
     background-image: none!important;
   }
@@ -347,6 +348,8 @@ button.square-home {
   a{
     text-decoration: underline;
   }
+  opacity: 0;
+  animation: fadein 1.5s linear 0.8s 1 forwards;
 }
 
 .info{

@@ -253,6 +253,17 @@ interface StudioDocumentData {
      */
     name: prismicT.RichTextField;
     /**
+     * Number field in *Studio*
+     *
+     * - **Field Type**: Number
+     * - **Placeholder**: *None*
+     * - **API ID Path**: studio.number
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/number
+     *
+     */
+    number: prismicT.NumberField;
+    /**
      * Image field in *Studio*
      *
      * - **Field Type**: Image

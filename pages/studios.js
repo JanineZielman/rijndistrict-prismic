@@ -66,7 +66,7 @@ const Studios = ({ settings, navigation, studios, openStudios }) => {
                   </div>
                 </div>
                 <div className="info"><p>{item.data.dicipline}</p><p>{item.data.time}</p></div>
-                <h2>{prismicH.asText(item.data.name)}</h2>
+                <h2>{item.data.number}. {prismicH.asText(item.data.name)}</h2>
             </Link>
           )
         })}
@@ -83,7 +83,13 @@ export async function getStaticProps({ locale, previewData }) {
 
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
-  const studios = await client.getAllByType("studio", { lang: locale });
+  const studios = await client.getAllByType("studio", { 
+    lang: locale,
+    orderings: {
+      field: 'my.studio.number',
+      direction: 'asc',
+    },
+  });
   const openStudios = await client.getSingle("open_studios", { lang: locale });
 
 

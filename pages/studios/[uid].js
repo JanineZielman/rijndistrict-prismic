@@ -25,7 +25,6 @@ const Page = ({page, navigation, settings }) => {
       </Head>
       <div className={`container page studio-page`}>
         <div className="content">
-          
           <div className="flex animation">
             <img src={page.data.image.url}/>
             <img src={page.data.image2.url}/>
@@ -33,7 +32,7 @@ const Page = ({page, navigation, settings }) => {
           <div className="info">
             <p>{page.data.dicipline}</p>
             <p><a target="_blank" href={`https://www.google.com/maps/place/${page.data.adres} Arnhem`}>{page.data.adres}</a></p>
-            <p>{page.data.time}</p>
+            <p>{page.data.dicipline}</p>
           </div>
           <PrismicRichText field={page.data.name}/>
         </div>
@@ -52,7 +51,9 @@ export default Page;
 export async function getStaticProps({ params, locale, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("studio", params.uid, { lang: locale });
+  const page = await client.getByUID("studio", params.uid, {
+     lang: locale,
+  });
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
 

@@ -21,6 +21,13 @@
           "multi": "heading2"
         }
       },
+      "number": {
+        "type": "Number",
+        "config": {
+          "label": "Number",
+          "placeholder": ""
+        }
+      },
       "image": {
         "type": "Image",
         "config": {
