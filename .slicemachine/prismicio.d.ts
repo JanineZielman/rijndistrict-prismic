@@ -308,6 +308,28 @@ interface StudioDocumentData {
      */
     email: prismicT.KeyTextField;
     /**
+     * Website field in *Studio*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: studio.website
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    website: prismicT.KeyTextField;
+    /**
+     * Time field in *Studio*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: studio.time
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    time: prismicT.KeyTextField;
+    /**
      * Slice Zone field in *Studio*
      *
      * - **Field Type**: Slice Zone

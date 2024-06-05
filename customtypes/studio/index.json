@@ -64,6 +64,20 @@
           "placeholder": ""
         }
       },
+      "website": {
+        "type": "Text",
+        "config": {
+          "label": "Website",
+          "placeholder": ""
+        }
+      },
+      "time": {
+        "type": "Text",
+        "config": {
+          "label": "Time",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

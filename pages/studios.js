@@ -65,7 +65,7 @@ const Studios = ({ settings, navigation, studios, openStudios }) => {
                     </div>
                   </div>
                 </div>
-                <div className="info"><p>{item.data.dicipline}</p></div>
+                <div className="info"><p>{item.data.dicipline}</p><p>{item.data.time}</p></div>
                 <h2>{prismicH.asText(item.data.name)}</h2>
             </Link>
           )

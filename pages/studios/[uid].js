@@ -33,11 +33,15 @@ const Page = ({page, navigation, settings }) => {
           <div className="info">
             <p>{page.data.dicipline}</p>
             <p><a target="_blank" href={`https://www.google.com/maps/place/${page.data.adres} Arnhem`}>{page.data.adres}</a></p>
-            <p><a target="_blank" href={`mailto:${page.data.email}`}>{page.data.email}</a></p>
+            <p>{page.data.time}</p>
           </div>
           <PrismicRichText field={page.data.name}/>
         </div>
         <SliceZone slices={page.data.slices} components={components} />
+        <div className="text-section contact-info">
+            <p><a target="_blank" href={`mailto:${page.data.email}`}>{page.data.email}</a></p>
+            <p><a target="_blank" href={`https://${page.data.website}`}>{page.data.website}</a></p>
+        </div>
       </div>
     </Layout>
   );
