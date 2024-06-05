@@ -32,7 +32,7 @@ const Page = ({page, navigation, settings }) => {
           <div className="info">
             <p>{page.data.dicipline}</p>
             <p><a target="_blank" href={`https://www.google.com/maps/place/${page.data.adres} Arnhem`}>{page.data.adres}</a></p>
-            <p>{page.data.dicipline}</p>
+            <p>{page.data.time}</p>
           </div>
           <PrismicRichText field={page.data.name}/>
         </div>
