@@ -165,7 +165,7 @@ h2{
 .studio-grid{
   display: flex;
   flex-wrap: wrap;
-  padding: 0 0.5%;
+  padding: 0;
   padding-bottom: 100px;
   .studio{
     width: 24%;
@@ -221,15 +221,15 @@ h2{
 
 button.square-studio {
   display: inline-block;
-  width: calc(23.28vw / 5);
-  height: calc(23.28vw / 5);
+  width: calc(23.52vw / 5);
+  height: calc(23.52vw / 5);
   border: none;
   outline: 0px;
   background-color: transparent;
   position: relative;
   padding: 0;
   transform-origin: center center;
-  background-size: 23.28vw 23.28vw;
+  background-size: 23.52vw 23.52vw;
   &.studio1{
     background-image: none!important;
   }
@@ -238,11 +238,11 @@ button.square-studio {
 @for $i from 0 through 4 {
   @for $j from ($i * 5) through ($i * 5 + 4) {
     button.square-studio#square-studio#{calc($j)}{
-      background-position-y: ($i * calc(-23.28vw / 5));
+      background-position-y: ($i * calc(-23.52vw / 5));
     }
   }
   button.square-studio:nth-child(5n+#{$i+1}){
-    background-position-x: ($i * calc(-23.28vw / 5));
+    background-position-x: ($i * calc(-23.52vw / 5));
   }
   button.square-studio:nth-child(5n+ 1){
     background-color: white;

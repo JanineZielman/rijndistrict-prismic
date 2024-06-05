@@ -76,9 +76,9 @@
     }
   }
   button.square-studio {
-    width: calc((100vw - 24px)/5);
+    width: calc((100vw - 20px)/5);
     height: calc((100vw - 20px)/5);
-    background-size: calc(100vw - 24px) calc(100vw - 24px);
+    background-size: calc(100vw - 20px) calc(100vw - 20px);
     &.studio1{
       background-image: none!important;
     }
