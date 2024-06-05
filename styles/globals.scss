@@ -216,19 +216,20 @@ h2{
   overflow: hidden;
   font-size: 0;
   margin-left: 0;
+  position: relative;
 }
 
 button.square-studio {
   display: inline-block;
-  width: calc(23.76vw / 5);
-  height: calc(23.76vw / 5);
+  width: calc(23.28vw / 5);
+  height: calc(23.28vw / 5);
   border: none;
   outline: 0px;
   background-color: transparent;
   position: relative;
   padding: 0;
   transform-origin: center center;
-  background-size: 23.76vw 23.76vw;
+  background-size: 23.28vw 23.28vw;
   &.studio1{
     background-image: none!important;
   }
@@ -237,11 +238,11 @@ button.square-studio {
 @for $i from 0 through 4 {
   @for $j from ($i * 5) through ($i * 5 + 4) {
     button.square-studio#square-studio#{calc($j)}{
-      background-position-y: ($i * calc(-23.76vw / 5));
+      background-position-y: ($i * calc(-23.28vw / 5));
     }
   }
   button.square-studio:nth-child(5n+#{$i+1}){
-    background-position-x: ($i * calc(-23.76vw / 5));
+    background-position-x: ($i * calc(-23.28vw / 5));
   }
   button.square-studio:nth-child(5n+ 1){
     background-color: white;
