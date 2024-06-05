@@ -81,7 +81,7 @@ const Logo = ({ settings, navigation, page }) => {
   return (
     <>
     <div className="poster poster-logo">
-      <div className="container">
+      <div className="container2">
         <div className="images-bg">
 
 
