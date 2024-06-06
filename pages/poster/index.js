@@ -92,7 +92,7 @@ const Poster = ({ settings, navigation, page }) => {
         <div className="logos">
           {settings.data.logos.map((item, i) => {
             return(
-              <img src={item.logo.url}/>
+              <img key={`logo${i}`} src={item.logo.url}/>
             )
           })}
         </div>

@@ -45,10 +45,12 @@
         text-align: right;
         white-space: nowrap;
         width: 40%;
+        line-height: 0.8;
         p{
           margin: 0;
-          margin-top: 3px;
+          // margin-top: 3px;
           font-size: 2.3vh;
+          font-weight: 300;
         }
       }  
     }
