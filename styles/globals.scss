@@ -295,6 +295,7 @@ button.square-home {
   }
 }
 
+
 @for $i from 0 through 4 {
   @for $j from ($i * 5) through ($i * 5 + 4) {
     button.square-home#square-home#{calc($j)}{
@@ -438,8 +439,19 @@ button.square-home {
   }
 }
 
-.social-grid{
+.home-grid.social-grid{
   .img-wrapper{
+    width: 100vw;
+    height: 100vh;
+  }
+  #file2 input{
+    left: 50vw;
+  }
+  .reset-button{
+    display: none;
+  }
+  #wrapper2{
+    width: 100vw;
     height: 100vh;
   }
   input{
@@ -454,4 +466,29 @@ button.square-home {
     -moz-box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 36px -11px rgba(0,0,0,0.75);
   }
+    button.square-home {
+      display: inline-block;
+      width: calc(100vw / 10);
+      height: calc(100vh / 10);
+      border: none;
+      outline: 0px;
+      background-color: transparent;
+      position: relative;
+      padding: 0;
+      transform-origin: center center;
+      background-size: auto 100vh;
+      &.studio1{
+        background-image: none!important;
+      }
+    }
+    @for $i from 0 through 9 {
+      @for $j from ($i * 10) through ($i * 10 + 9) {
+        button.square-home#square-home#{calc($j)}{
+          background-position-y: ($i * calc(-100vh / 10));
+        }
+      }
+      button.square-home:nth-child(10n+#{$i+1}){
+        background-position-x: ($i * calc(-100vw / 10));
+      }
+    }
 }

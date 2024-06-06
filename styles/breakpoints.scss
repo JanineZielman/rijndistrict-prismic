@@ -153,12 +153,14 @@
   }
   .social-grid .img-wrapper{
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
   }
+  
 
-  .social-grid{
+  .home-grid.social-grid{
    #file2 input{
       top: 300px;
+      left: 0;
     }
   }
 }
