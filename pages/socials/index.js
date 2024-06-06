@@ -30,6 +30,7 @@ const Index = () => {
           document.getElementsByClassName("square-home")[i].style.backgroundImage = 'none' 
         }
       }
+        let random2 = Math.floor(Math.random() * 11);
         document.getElementById('r-logo').src = `/r${random2}.svg`
 
        
