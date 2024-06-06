@@ -11,19 +11,7 @@ const Poster = ({ settings, navigation, page }) => {
     checkGrid();
   });
 
-  let list = [];
-  useEffect(() => {
-    
-    for (let i = 8; i < 200; i = i + 8) {
-      list.push(i)
-      list.push(i + 1)
-      list.push(i - 1)
-    }
-    console.log(list)
-  }, [])
-
-
-
+  let list = [0, 2, 7, 8,16,24,32,33,41,42, 73,74, 79,78];
 
   function addGrid(){
     document.getElementById('file2').children[0].style.opacity = 0;
@@ -32,14 +20,14 @@ const Poster = ({ settings, navigation, page }) => {
     idVal.value = 'square-container';
     container.setAttributeNode(idVal);     
     document.getElementById('wrapper').appendChild(container);
-    for(let i = 0; i < 200; i++) {
+    for(let i = 0; i < 80; i++) {
         let div = document.createElement('button');
         let attr = document.createAttribute('class');
         attr.value = 'square';
         div.id = `square${i}`;
         div.style.backgroundImage  = `url(${document.getElementById('file2').children[0].data})`
         let random = Math.floor(Math.random() * 2)
-        if (random == 1 && list.includes(i)){
+        if (list.includes(i)){
           div.style.backgroundColor = 'white';
           div.style.backgroundImage = 'none';
         }
@@ -101,6 +89,13 @@ const Poster = ({ settings, navigation, page }) => {
       </div>
       <div className="bottombar">
         <h1>{navigation.data.description}</h1>
+        <div className="logos">
+          {settings.data.logos.map((item, i) => {
+            return(
+              <img src={item.logo.url}/>
+            )
+          })}
+        </div>
         <h1>
           {navigation.data.date}
           <p>www.rijndistrict.nl</p>

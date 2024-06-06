@@ -228,6 +228,33 @@ interface SettingsDocumentData {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Logos field in *Settings*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.logos[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    logos: prismicT.GroupField<Simplify<SettingsDocumentDataLogosItem>>;
+}
+/**
+ * Item in Settings → Logos
+ *
+ */
+export interface SettingsDocumentDataLogosItem {
+    /**
+     * Logo field in *Settings → Logos*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.logos[].logo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo: prismicT.ImageField<never>;
 }
 /**
  * Settings document from Prismic
@@ -471,6 +498,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataImagesItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, OpenStudiosDocumentData, OpenStudiosDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { HomeDocumentData, HomeDocumentDataImagesItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, OpenStudiosDocumentData, OpenStudiosDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataLogosItem, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

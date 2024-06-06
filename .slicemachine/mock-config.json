@@ -6,7 +6,9 @@
     },
     "studio": {},
     "navigation": {},
-    "settings": {},
+    "settings": {
+      "logos": {}
+    },
     "open_studios": {}
   },
   "slices": {

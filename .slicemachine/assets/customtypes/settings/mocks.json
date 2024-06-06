@@ -5,35 +5,69 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Discover"
+          "text": "Cotton"
         }
       }
     ]
   },
   "description": {
     "__TYPE__": "FieldContent",
-    "value": "difficult",
+    "value": "unit",
     "type": "Text"
   },
   "image": {
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-      "width": 5616,
-      "height": 3744
+      "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+      "width": 3958,
+      "height": 3958
     },
-    "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?rect=0%2C0%2C5616%2C3744&w=1200&h=800",
+    "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?rect=0%2C660%2C3958%2C2639&w=1200&h=800",
     "width": 1200,
     "height": 800,
     "edit": {
       "zoom": 1,
       "crop": {
         "x": 0,
-        "y": 0
+        "y": 660
       },
       "background": "transparent"
     },
     "thumbnails": {}
+  },
+  "logos": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "logo",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+                "width": 4000,
+                "height": 4000
+              },
+              "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?rect=0%2C0%2C4000%2C4000&w=300&h=300",
+              "width": 300,
+              "height": 300,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ]
+        ]
+      }
+    ]
   }
 }

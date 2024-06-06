@@ -40,10 +40,11 @@
       font-size: 3vh;
       padding: 8px;
       font-weight: 400;
-      width: 50%;
+      width: 57%;
       &:last-child{
         text-align: right;
         white-space: nowrap;
+        width: 40%;
         p{
           margin: 0;
           margin-top: 3px;
@@ -93,7 +94,7 @@
   position: relative;
   padding: 0;
   transform-origin: center center;
-  background-size: calc(100% * 9);
+  background-size: calc(100% * 10);
   background-repeat: no-repeat;
 }
 
@@ -108,7 +109,7 @@
   }
   .poster button.square:nth-child(8n+ 1){
     background-color: white;
-    background-image: none;
+    background-image: none!important;
   }
 }
 
@@ -156,4 +157,19 @@
   color: white;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.logos{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  // flex-direction: column;
+  padding-bottom: 14px;
+  // position: fixed;
+  z-index: 99999;
+  img{
+    width: auto;
+    height: 4.5vh;
+    margin: 0 5px;
+  }
 }
