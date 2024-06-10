@@ -32,6 +32,9 @@
             },
             "collapsible": {
               "type": "SharedSlice"
+            },
+            "interactive_map": {
+              "type": "SharedSlice"
             }
           }
         }

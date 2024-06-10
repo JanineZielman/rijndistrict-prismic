@@ -1,18 +1,18 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "small"
+    "value": "shown"
   },
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "plant",
+    "value": "realize",
     "type": "Text"
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "text$d37eba8a-45c4-40d9-8d4a-3734bf5c85ae",
+        "key": "text$8124672e-7f1a-43a4-a51c-4ee0fc6b59ea",
         "name": "text",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -24,7 +24,7 @@
                 {
                   "type": "heading2",
                   "content": {
-                    "text": "Greatly"
+                    "text": "Breeze"
                   }
                 }
               ]
@@ -35,7 +35,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Nisi eu velit irure veniam officia fugiat voluptate veniam et pariatur nulla. Esse quis irure nostrud duis nisi anim ad nulla sit dolore."
+                    "text": "Duis adipisicing velit aliqua anim sunt consequat proident. Anim exercitation nostrud nostrud excepteur nulla sunt consectetur deserunt labore tempor magna fugiat proident eiusmod."
                   }
                 }
               ]
@@ -50,7 +50,7 @@
         }
       },
       {
-        "key": "image$8ec0ca9c-dc50-4b66-af7c-087c7b429192",
+        "key": "image$fb42ceba-0c88-414e-9db6-b6f763744318",
         "name": "image",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -60,13 +60,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
-                "width": 5848,
-                "height": 3899
+                "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+                "width": 3958,
+                "height": 3958
               },
-              "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?rect=0%2C0%2C5848%2C3899&w=1920&h=1280",
+              "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?rect=0%2C0%2C3958%2C3958&w=1920&h=1920",
               "width": 1920,
-              "height": 1280,
+              "height": 1920,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -83,7 +83,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Ut tempor officia occaecat magna proident culpa nulla minim occaecat culpa velit laboris."
+                    "text": "Sit ipsum culpa exercitation fugiat magna ullamco. Occaecat exercitation consequat sint ipsum proident exercitation mollit magna dolor cupidatat qui Lorem id."
                   }
                 }
               ]
@@ -98,7 +98,7 @@
         }
       },
       {
-        "key": "collapsible$7d52da63-af45-48d7-931f-aaa9375d9b11",
+        "key": "collapsible$200531c1-eb04-4c8a-8cf3-b41ca6bee58b",
         "name": "collapsible",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -110,7 +110,7 @@
                 {
                   "type": "heading2",
                   "content": {
-                    "text": "Fully"
+                    "text": "Joined"
                   }
                 }
               ]
@@ -121,10 +121,51 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Ut fugiat consectetur sit amet anim. Consequat consectetur do eiusmod adipisicing elit dolore laborum duis id consequat in. Esse ad dolore consectetur anim occaecat voluptate non."
+                    "text": "Voluptate amet magna cupidatat cillum esse cupidatat esse laborum eiusmod veniam. Culpa fugiat nisi eiusmod cillum eiusmod ut sit do deserunt officia. Sunt enim voluptate adipisicing fugiat fugiat velit et commodo est."
                   }
                 }
               ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "interactive_map$7fa1e173-872f-48de-a928-2339a8032674",
+        "name": "interactive_map",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "svg": {
+              "embed_url": "https://twitter.com/prismicio/status/1356293316158095361",
+              "author_name": "Prismic",
+              "author_url": "https://twitter.com/prismicio",
+              "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Gatsby is a popular choice for Prismic users and we work hard on delivering a CMS that plays to its strengths.<br><br>But, what makes <a href=\"https://twitter.com/GatsbyJS?ref_src=twsrc%5Etfw\">@GatsbyJS</a> so popular?<br><br>Here are some of <a href=\"https://twitter.com/mxstbr?ref_src=twsrc%5Etfw\">@mxstbr</a>&#39;s thoughts on Gatsby&#39;s success and how they&#39;re improving developer experience.<a href=\"https://t.co/ZjCPvsWWUD\">https://t.co/ZjCPvsWWUD</a> <a href=\"https://t.co/EQqzJpeNKl\">pic.twitter.com/EQqzJpeNKl</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1356293316158095361?ref_src=twsrc%5Etfw\">February 1, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+              "width": 550,
+              "height": null,
+              "type": "rich",
+              "cache_age": "3153600000",
+              "provider_name": "Twitter",
+              "provider_url": "http://www.twitter.com/",
+              "version": "1.0",
+              "__TYPE__": "EmbedContent",
+              "all": {
+                "embed_url": "https://twitter.com/prismicio/status/1356293316158095361",
+                "type": "rich",
+                "author_name": "Prismic",
+                "author_url": "https://twitter.com/prismicio",
+                "cache_age": "3153600000",
+                "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Gatsby is a popular choice for Prismic users and we work hard on delivering a CMS that plays to its strengths.<br><br>But, what makes <a href=\"https://twitter.com/GatsbyJS?ref_src=twsrc%5Etfw\">@GatsbyJS</a> so popular?<br><br>Here are some of <a href=\"https://twitter.com/mxstbr?ref_src=twsrc%5Etfw\">@mxstbr</a>&#39;s thoughts on Gatsby&#39;s success and how they&#39;re improving developer experience.<a href=\"https://t.co/ZjCPvsWWUD\">https://t.co/ZjCPvsWWUD</a> <a href=\"https://t.co/EQqzJpeNKl\">pic.twitter.com/EQqzJpeNKl</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1356293316158095361?ref_src=twsrc%5Etfw\">February 1, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+                "provider_name": "Twitter",
+                "provider_url": "http://www.twitter.com/",
+                "version": "1.0"
+              }
             }
           },
           "items": [

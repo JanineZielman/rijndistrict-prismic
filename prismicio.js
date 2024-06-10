@@ -23,7 +23,7 @@ export const linkResolver = (doc) => {
     return `/${doc.uid}`;
   }
   if (doc.type === "studio") {
-    return `/studios/${doc.uid}`;
+    return `/ondernemers/${doc.uid}`;
   }
   if (doc.type === "home") {
     return `/`;

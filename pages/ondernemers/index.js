@@ -1,8 +1,8 @@
 import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 
-import { createClient } from "../prismicio";
-import { Layout } from "../components/Layout";
+import { createClient } from "../../prismicio";
+import { Layout } from "../../components/Layout";
 import Link from "next/link";
 import { PrismicRichText } from "@prismicio/react";
 import { useEffect } from "react";
@@ -52,7 +52,7 @@ const Studios = ({ settings, navigation, studios, openStudios }) => {
       <div className="studio-grid">
         {studios.map((item, i) => {
           return(
-            <Link href={`/studios/${item.uid}`} className="studio" key={`studio${i}`}>
+            <Link href={`/ondernemers/${item.uid}`} className="studio" key={`studio${i}`}>
                 <div className="img-wrapper">
                   <img src={item.data.image.url}/>
                   <div id="wrapper2">

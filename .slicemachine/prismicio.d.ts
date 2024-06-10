@@ -193,7 +193,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = TextSlice | ImageSlice | CollapsibleSlice;
+type PageDocumentDataSlicesSlice = TextSlice | ImageSlice | CollapsibleSlice | InteractiveMapSlice;
 /**
  * Page document from Prismic
  *
