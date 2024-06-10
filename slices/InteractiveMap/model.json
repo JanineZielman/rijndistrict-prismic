@@ -12,7 +12,7 @@
       "description": "InteractiveMap",
       "primary": {
         "svg": {
-          "type": "Embed",
+          "type": "Text",
           "config": {
             "label": "SVG",
             "placeholder": ""

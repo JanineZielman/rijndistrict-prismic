@@ -161,6 +161,19 @@ h2{
     font-size: 24px;
   }
 }
+.Collapsible{
+  max-width: 900px;
+  margin: auto;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  padding: 10px 0;
+  border-bottom: 1.5px solid black;
+  span{
+    font-size: 24px;
+    cursor: pointer;
+    // font-weight: bold;
+  }
+}
 
 .studio-grid{
   display: flex;
@@ -188,6 +201,13 @@ h2{
   margin: auto;
   margin-top: 80px;
   padding-bottom: 100px;
+}
+
+.interactive-map{
+  margin-bottom: 48px;
+  #nummers g{
+    cursor: pointer;
+  }
 }
 
 .image-section{

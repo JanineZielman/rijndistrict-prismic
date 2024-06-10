@@ -20,6 +20,13 @@
             "single": "heading2"
           }
         },
+        "scroll_id": {
+          "type": "Text",
+          "config": {
+            "label": "Scroll ID",
+            "placeholder": ""
+          }
+        },
         "content": {
           "type": "StructuredText",
           "config": {

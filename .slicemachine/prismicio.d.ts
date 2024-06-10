@@ -422,6 +422,16 @@ interface CollapsibleSliceDefaultPrimary {
      */
     title: prismicT.TitleField;
     /**
+     * Scroll ID field in *Collapsible → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collapsible.primary.scroll_id
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    scroll_id: prismicT.KeyTextField;
+    /**
      * Content field in *Collapsible → Primary*
      *
      * - **Field Type**: Rich Text
@@ -512,13 +522,13 @@ interface InteractiveMapSliceDefaultPrimary {
     /**
      * SVG field in *InteractiveMap → Primary*
      *
-     * - **Field Type**: Embed
+     * - **Field Type**: Text
      * - **Placeholder**: *None*
      * - **API ID Path**: interactive_map.primary.svg
-     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    svg: prismicT.EmbedField;
+    svg: prismicT.KeyTextField;
 }
 /**
  * Default variation for InteractiveMap Slice

@@ -24,6 +24,11 @@
             }
           }
         ]
+      },
+      "scroll_id": {
+        "__TYPE__": "FieldContent",
+        "value": "beat",
+        "type": "Text"
       }
     },
     "items": [
