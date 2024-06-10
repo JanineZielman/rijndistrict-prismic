@@ -12,6 +12,13 @@
           "placeholder": ""
         }
       },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -21,6 +28,9 @@
               "type": "SharedSlice"
             },
             "image": {
+              "type": "SharedSlice"
+            },
+            "collapsible": {
               "type": "SharedSlice"
             }
           }

@@ -21,6 +21,16 @@
       "default": {
         "primary": {}
       }
+    },
+    "Collapsible": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "InteractiveMap": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

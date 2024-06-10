@@ -167,6 +167,17 @@ export type OpenStudiosDocument<Lang extends string = string> = prismicT.Prismic
 /** Content for Page documents */
 interface PageDocumentData {
     /**
+     * Title field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
      * Slice Zone field in *Page*
      *
      * - **Field Type**: Slice Zone
@@ -182,7 +193,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = TextSlice | ImageSlice;
+type PageDocumentDataSlicesSlice = TextSlice | ImageSlice | CollapsibleSlice;
 /**
  * Page document from Prismic
  *
@@ -396,6 +407,55 @@ type StudioDocumentDataSlicesSlice = TextSlice | ImageSlice;
 export type StudioDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<StudioDocumentData>, "studio", Lang>;
 export type AllDocumentTypes = HomeDocument | NavigationDocument | OpenStudiosDocument | PageDocument | SettingsDocument | StudioDocument;
 /**
+ * Primary content in Collapsible → Primary
+ *
+ */
+interface CollapsibleSliceDefaultPrimary {
+    /**
+     * Title field in *Collapsible → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collapsible.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Content field in *Collapsible → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: collapsible.primary.content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Default variation for Collapsible Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Collapsible`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CollapsibleSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CollapsibleSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Collapsible*
+ *
+ */
+type CollapsibleSliceVariation = CollapsibleSliceDefault;
+/**
+ * Collapsible Shared Slice
+ *
+ * - **API ID**: `collapsible`
+ * - **Description**: `Collapsible`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CollapsibleSlice = prismicT.SharedSlice<"collapsible", CollapsibleSliceVariation>;
+/**
  * Primary content in Image → Primary
  *
  */
@@ -444,6 +504,45 @@ type ImageSliceVariation = ImageSliceDefault;
  *
  */
 export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
+/**
+ * Primary content in InteractiveMap → Primary
+ *
+ */
+interface InteractiveMapSliceDefaultPrimary {
+    /**
+     * SVG field in *InteractiveMap → Primary*
+     *
+     * - **Field Type**: Embed
+     * - **Placeholder**: *None*
+     * - **API ID Path**: interactive_map.primary.svg
+     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+     *
+     */
+    svg: prismicT.EmbedField;
+}
+/**
+ * Default variation for InteractiveMap Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `InteractiveMap`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InteractiveMapSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<InteractiveMapSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *InteractiveMap*
+ *
+ */
+type InteractiveMapSliceVariation = InteractiveMapSliceDefault;
+/**
+ * InteractiveMap Shared Slice
+ *
+ * - **API ID**: `interactive_map`
+ * - **Description**: `InteractiveMap`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InteractiveMapSlice = prismicT.SharedSlice<"interactive_map", InteractiveMapSliceVariation>;
 /**
  * Primary content in Text → Primary
  *
@@ -498,6 +597,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataImagesItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, OpenStudiosDocumentData, OpenStudiosDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataLogosItem, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { HomeDocumentData, HomeDocumentDataImagesItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, OpenStudiosDocumentData, OpenStudiosDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataLogosItem, SettingsDocument, StudioDocumentData, StudioDocumentDataSlicesSlice, StudioDocument, AllDocumentTypes, CollapsibleSliceDefaultPrimary, CollapsibleSliceDefault, CollapsibleSliceVariation, CollapsibleSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, InteractiveMapSliceDefaultPrimary, InteractiveMapSliceDefault, InteractiveMapSliceVariation, InteractiveMapSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

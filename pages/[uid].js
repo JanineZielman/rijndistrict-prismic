@@ -5,7 +5,6 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { components } from "../slices";
 import { Layout } from "../components/Layout";
-import Moment from 'moment';
 
 const Page = ({page, navigation, settings }) => {
   return (
@@ -16,11 +15,11 @@ const Page = ({page, navigation, settings }) => {
     >
       <Head>
         <title>
-          {prismicH.asText(page.data.title)} | {prismicH.asText(settings.data.siteTitle)}
+          {page.data.title} | {prismicH.asText(settings.data.siteTitle)}
         </title>
         <meta name="description" content={settings.data.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${prismicH.asText(page.data.title)} | ${prismicH.asText(settings.data.siteTitle)}`} />
+        <meta property="og:title" content={`${page.data.title} | ${prismicH.asText(settings.data.siteTitle)}`} />
         <meta property="og:description" content={settings.data.description} />
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
