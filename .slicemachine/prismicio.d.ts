@@ -368,6 +368,18 @@ interface StudioDocumentData {
      */
     time: prismicT.KeyTextField;
     /**
+     * Not Active field in *Studio*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: studio.not_active
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    not_active: prismicT.BooleanField;
+    /**
      * Slice Zone field in *Studio*
      *
      * - **Field Type**: Slice Zone

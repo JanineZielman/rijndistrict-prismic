@@ -50,7 +50,30 @@ const Studios = ({ settings, navigation, studios, openStudios }) => {
         <PrismicRichText field={openStudios.data.intro}/>
       </div>
       <div className="studio-grid">
-        {studios.map((item, i) => {
+        {studios.filter((studio) => studio.data.not_active != true).map((item, i) => {
+          return(
+            <Link href={`/ondernemers/${item.uid}`} className="studio" key={`studio${i}`}>
+                <div className="img-wrapper">
+                  <img src={item.data.image.url}/>
+                  <div id="wrapper2">
+                    <div className='square-container-studio'>
+                      {[...Array(25)].map((squareStudio, j) => {
+                        return(
+                          <button key={`square-studio${j}`} id={`square-studio${j}`} className={`square-studio`} style={{backgroundImage: `url(${item.data.image2.url})`}}></button>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <div className="info"><p>{item.data.dicipline}</p><p>{item.data.time}</p></div>
+                <h2>{prismicH.asText(item.data.name)}</h2>
+            </Link>
+          )
+        })}
+       </div>
+       {studios.filter((studio) => studio.data.not_active == true).length > 0 && <h2>Eerder deelgenomen</h2>}
+       <div className="studio-grid">
+        {studios.filter((studio) => studio.data.not_active == true).map((item, i) => {
           return(
             <Link href={`/ondernemers/${item.uid}`} className="studio" key={`studio${i}`}>
                 <div className="img-wrapper">
