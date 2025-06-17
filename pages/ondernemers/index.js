@@ -101,27 +101,23 @@ const Studios = ({ settings, navigation, studios, openStudios }) => {
 
 export default Studios;
 
-export async function getStaticProps({ locale, previewData }) {
+export async function getServerSideProps({ locale, previewData }) {
   const client = createClient({ previewData });
 
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
-  const studios = await client.getAllByType("studio", { 
-    lang: locale,
-    orderings: {
-      field: 'my.studio.name',
-      direction: 'asc',
-    },
-  });
+  const studios = await client.getAllByType("studio", { lang: locale });
   const openStudios = await client.getSingle("open_studios", { lang: locale });
 
+  // Shuffle studios array for random order
+  const shuffledStudios = studios.sort(() => Math.random() - 0.5);
 
   return {
     props: {
       navigation,
       settings,
-      studios,
-      openStudios
+      studios: shuffledStudios,
+      openStudios,
     },
   };
 }
